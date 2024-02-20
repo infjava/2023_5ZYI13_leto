@@ -13,12 +13,12 @@ import java.util.ArrayList;
  * @version 2012.02.21
  */
 public class Miestnost {
-    public String popisMiestnosti;
-    public Miestnost severnyVychod;
-    public Miestnost juznyVychod;
-    public Miestnost vychodnyVychod;
-    public Miestnost zapadnyVychod;
-    public ArrayList<Predmet> predmety;
+    private String popisMiestnosti;
+    private Miestnost severnyVychod;
+    private Miestnost juznyVychod;
+    private Miestnost vychodnyVychod;
+    private Miestnost zapadnyVychod;
+    private ArrayList<Predmet> predmety;
 
     /**
      * Vytvori miestnost popis ktorej je v parametrom.
@@ -86,4 +86,25 @@ public class Miestnost {
 
         return null;
     }
+
+    public Miestnost getSevernyVychod() {
+        return this.severnyVychod;
+    }
+
+    public Miestnost getJuznyVychod() {
+        return this.juznyVychod;
+    }
+
+    public Miestnost getVychodnyVychod() {
+        return this.vychodnyVychod;
+    }
+
+    public Miestnost getZapadnyVychod() {
+        return this.zapadnyVychod;
+    }
+
+    public ArrayList<Predmet> getPredmety() {
+        return this.predmety;
+    }
+
 }
