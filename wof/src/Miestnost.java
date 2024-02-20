@@ -107,4 +107,29 @@ public class Miestnost {
         return this.predmety;
     }
 
+    void vypisStavMiestnosti() {
+        System.out.println("Teraz si v miestnosti " + this.getPopis());
+        System.out.print("Vychody: ");
+        if (this.getSevernyVychod() != null) {
+            System.out.print("sever ");
+        }
+        if (this.getVychodnyVychod() != null) {
+            System.out.print("vychod ");
+        }
+        if (this.getJuznyVychod() != null) {
+            System.out.print("juh ");
+        }
+        if (this.getZapadnyVychod() != null) {
+            System.out.print("zapad ");
+        }
+        System.out.println();
+
+        if (!this.getPredmety().isEmpty()) {
+            System.out.print("Predmety v miestnosti: ");
+            for (Predmet predmet : this.getPredmety()) {
+                System.out.printf("%s ", predmet.getNazov());
+            }
+            System.out.println();
+        }
+    }
 }
