@@ -1,5 +1,7 @@
+package fri.wof.prikazy;
+
 /**
- * Trieda NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry. 
+ * Trieda fri.wof.prikazy.NazvyPrikazov udrzuje zoznam nazvov platnych prikazov hry.
  * Za ulohu ma rozpoznavat platne prikazy.
  *
  * @author  Michael Kolling and David J. Barnes

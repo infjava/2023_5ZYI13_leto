@@ -1,8 +1,10 @@
+package fri.wof.prostredie;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
- * Trieda Miestnost realizuje jednu miestnost/priestor v celom priestore hry.
+ * Trieda fri.wof.gameplay.Miestnost realizuje jednu miestnost/priestor v celom priestore hry.
  * Kazda "miestnost" je z inymi miestnostami spojena vychodmi. 
  * Vychody z miestnosti su oznacovane svetovymi stranami sever, vychod, juh
  * a zapad. Pre kazdy vychod si miestnost pamata odkaz na susednu miestnost
@@ -66,7 +68,7 @@ public class Miestnost {
         return null;
     }
 
-    void vypisStavMiestnosti() {
+    public void vypisStavMiestnosti() {
         System.out.println("Teraz si v miestnosti " + this.getPopis());
         System.out.print("Vychody: ");
         for (String smer : this.vychody.keySet()) {
@@ -83,7 +85,7 @@ public class Miestnost {
         }
     }
 
-    Miestnost getMiestnost(String smer) {
+    public Miestnost getMiestnost(String smer) {
         return this.vychody.get(smer);
     }
 }

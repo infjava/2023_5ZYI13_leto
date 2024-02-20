@@ -1,3 +1,5 @@
+package fri.wof.prostredie;
+
 public class Predmet {
     private String nazov;
 
