@@ -17,7 +17,7 @@ import java.util.HashMap;
  */
 public class Miestnost {
     private String popisMiestnosti;
-    private HashMap<String,Miestnost> vychody;
+    private HashMap<String, Miestnost> vychody;
     private ArrayList<Predmet> predmety;
 
     /**
