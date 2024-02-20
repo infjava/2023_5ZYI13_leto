@@ -132,4 +132,14 @@ public class Miestnost {
             System.out.println();
         }
     }
+
+    Miestnost getMiestnost(String smer) {
+        return switch (smer) {
+            case "sever" -> this.getSevernyVychod();
+            case "vychod" -> this.getVychodnyVychod();
+            case "juh" -> this.getJuznyVychod();
+            case "zapad" -> this.getZapadnyVychod();
+            default -> null;
+        };
+    }
 }

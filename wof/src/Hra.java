@@ -144,6 +144,7 @@ public class Hra  {
      * Ak je tym smerom vychod, hrac prejde do novej miestnosti.
      * Inak sa vypise chybova sprava do terminaloveho okna.
      */
+    @SuppressWarnings("checkstyle:RequireThis")
     private void chodDoMiestnosti(Prikaz prikaz) {
         if (!prikaz.maParameter()) {
             // ak prikaz nema parameter - druhe slovo - nevedno kam ist
@@ -154,21 +155,7 @@ public class Hra  {
         String smer = prikaz.getParameter();
 
         // Pokus o opustenie aktualnej miestnosti danym vychodom.
-        Miestnost novaMiestnost = null;
-        switch (smer) {
-            case "sever":
-                novaMiestnost = this.aktualnaMiestnost.getSevernyVychod();
-                break;
-            case "vychod":
-                novaMiestnost = this.aktualnaMiestnost.getVychodnyVychod();
-                break;
-            case "juh":
-                novaMiestnost = this.aktualnaMiestnost.getJuznyVychod();
-                break;
-            case "zapad":
-                novaMiestnost = this.aktualnaMiestnost.getZapadnyVychod();
-                break;
-        }
+        var novaMiestnost = this.aktualnaMiestnost.getMiestnost(smer);
 
         if (novaMiestnost == null) {
             System.out.println("Tam nie je vychod!");
