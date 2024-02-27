@@ -1,6 +1,4 @@
-package fri.wof;
-
-import fri.wof.gameplay.Hra;
+package sk.uniza.fri.wof.zaklad;
 
 /**
  * Hlavna trieda hry WoF s metodou main - spustanie v NB

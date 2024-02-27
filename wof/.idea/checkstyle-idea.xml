@@ -5,14 +5,12 @@
     <scanScope>JavaOnly</scanScope>
     <copyLibs>true</copyLibs>
     <option name="thirdPartyClasspath" />
-    <option name="activeLocationIds">
-      <option value="27dc8b0c-e56e-4864-acd2-ef47433b1192" />
-    </option>
+    <option name="activeLocationIds" />
     <option name="locations">
       <list>
         <ConfigurationLocation id="bundled-sun-checks" type="BUNDLED" scope="All" description="Sun Checks">(bundled)</ConfigurationLocation>
         <ConfigurationLocation id="bundled-google-checks" type="BUNDLED" scope="All" description="Google Checks">(bundled)</ConfigurationLocation>
-        <ConfigurationLocation id="27dc8b0c-e56e-4864-acd2-ef47433b1192" type="HTTP_URL" scope="All" description="FRI">https://juno.kst.fri.uniza.sk/~duracik@kst/inf/default_checks.xml</ConfigurationLocation>
+        <ConfigurationLocation id="5bcac615-e14a-4db2-9775-16c98a998d90" type="HTTP_URL" scope="All" description="FRI">https://raw.githubusercontent.com/infjava/BlueJFRI/master/data/checkstyle/default_checks.xml</ConfigurationLocation>
       </list>
     </option>
   </component>

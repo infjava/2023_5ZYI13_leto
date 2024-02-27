@@ -1,12 +1,12 @@
-package fri.wof.prikazy;
+package sk.uniza.fri.wof.prikazy;
 
 import java.util.Scanner;
 
 /**
- * Trieda fri.wof.prikazy.Parser cita vstup zadany hracom do terminaloveho okna a pokusi sa
+ * Trieda sk.uniza.fri.wof.prikazy.Parser cita vstup zadany hracom do terminaloveho okna a pokusi sa
  * interpretovat ho ako prikaz hry. Kazda sprava dajPrikaz sposobi, ze parser
  * precita jeden riadok z terminaloveho okna a vyberie z neho prve dve slova.
- * Tie dve slova pouzije ako parametre v sprave new triede fri.wof.prikazy.Prikaz.
+ * Tie dve slova pouzije ako parametre v sprave new triede sk.uniza.fri.wof.prikazy.Prikaz.
  * 
  * @author  Michael Kolling and David J. Barnes
  * @version 2006.03.30
@@ -14,14 +14,14 @@ import java.util.Scanner;
  * @version 2012.02.21
  */
 public class Parser {
-    private final NazvyPrikazov prikazy;  // odkaz na pripustne nazvy prikazov
+    private final VykonavacPrikazov vykonavacPrikazov;  // odkaz na pripustne nazvy prikazov
     private final Scanner citac;         // zdroj vstupov od hraca
 
     /**
      * Vytvori citac na citanie vstupov z terminaloveho okna.
      */
-    public Parser() {
-        this.prikazy = new NazvyPrikazov();
+    public Parser(VykonavacPrikazov vykonavacPrikazov) {
+        this.vykonavacPrikazov = vykonavacPrikazov;
         this.citac = new Scanner(System.in);
     }
 
@@ -47,7 +47,7 @@ public class Parser {
         }
 
         // kontrola platnosti prikazu
-        if (this.prikazy.jePrikaz(prikaz)) {
+        if (this.vykonavacPrikazov.jePrikaz(prikaz)) {
             // vytvori platny prikaz
             return new Prikaz(prikaz, parameter);
         } else {
