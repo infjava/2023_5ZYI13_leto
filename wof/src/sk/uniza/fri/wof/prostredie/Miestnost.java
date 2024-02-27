@@ -33,7 +33,7 @@ public class Miestnost {
     }
 
     public void nastavVychod(String smer, Miestnost miestnost) {
-        this.vychody.put(smer, new Vychod(miestnost));
+        this.vychody.put(smer, new ObycajnyVychod(miestnost));
     }
 
     /**
