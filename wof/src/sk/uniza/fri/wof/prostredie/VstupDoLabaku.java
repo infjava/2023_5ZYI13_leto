@@ -16,6 +16,12 @@ public class VstupDoLabaku implements Vychod {
 
     @Override
     public boolean mozemVstupit(Hrac hrac) {
+        var navleky = hrac.getPredmet("navleky");
+
+        if (navleky != null && navleky.jeNasadeny()) {
+            return true;
+        }
+
         return false;
     }
 }

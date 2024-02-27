@@ -26,4 +26,9 @@ public class Navleky implements Predmet {
     public boolean mozemPolozit() {
         return !this.obute;
     }
+
+    @Override
+    public boolean jeNasadeny() {
+        return this.obute;
+    }
 }

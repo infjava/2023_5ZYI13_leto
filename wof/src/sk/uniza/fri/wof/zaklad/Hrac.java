@@ -64,4 +64,8 @@ public class Hrac {
         var predmet = this.inventar.get(nazovPredmetu);
         predmet.pouziSa();
     }
+
+    public Predmet getPredmet(String nazov) {
+        return this.inventar.get(nazov);
+    }
 }

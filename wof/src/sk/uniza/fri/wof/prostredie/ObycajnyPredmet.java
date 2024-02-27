@@ -21,4 +21,9 @@ public class ObycajnyPredmet implements Predmet {
     public boolean mozemPolozit() {
         return true;
     }
+
+    @Override
+    public boolean jeNasadeny() {
+        return false;
+    }
 }
