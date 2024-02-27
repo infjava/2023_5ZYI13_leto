@@ -18,6 +18,8 @@ public class Hrac {
         var vychod = this.aktualnaMiestnost.getVychodVSmere(smer);
         if (vychod == null) {
             System.out.println("Tam nie je vychod!");
+        } else if (!vychod.mozemVstupit(this)) {
+            System.out.println("Toto nie je v sucastnej situacii mozne!");
         } else {
             this.aktualnaMiestnost = vychod.getMiestnost();
             this.aktualnaMiestnost.vypisInfoOMiestnosti();
