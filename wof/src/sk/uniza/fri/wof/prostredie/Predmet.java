@@ -5,6 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Predmet {
     private final String nazov;
+    private boolean obute;
 
     public Predmet(String nazov) {
         this.nazov = nazov;
@@ -20,6 +21,14 @@ public class Predmet {
                 var dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
                 var now = LocalDateTime.now();
                 System.out.println(dtf.format(now));
+                break;
+            case "navleky":
+                this.obute = !this.obute;
+                if (this.obute) {
+                    System.out.println("Obul si si navleky");
+                } else {
+                    System.out.println("Vyzul si si navleky");
+                }
                 break;
             default:
                 System.out.format("Predmet %s sa neda pouzit%n", this.nazov);
