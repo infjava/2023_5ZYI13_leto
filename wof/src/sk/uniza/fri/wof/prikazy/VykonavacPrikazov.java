@@ -153,6 +153,13 @@ public class VykonavacPrikazov {
         System.out.println("Zabludil si. Si sam. Tulas sa po fakulte.");
         System.out.println();
         System.out.println("Mozes pouzit tieto prikazy:");
-        System.out.println("   chod zober poloz inventar ukonci pomoc");
+        System.out.println("   " + String.join(" ", PLATNE_PRIKAZY));
+        /*
+        System.out.print("   ");
+        for (String prikaz : PLATNE_PRIKAZY) {
+            System.out.format("%s ", prikaz);
+        }
+        System.out.println();
+        */
     }
 }
