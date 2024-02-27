@@ -53,4 +53,9 @@ public class Hrac {
     public Miestnost getAktualnaMiestnost() {
         return this.aktualnaMiestnost;
     }
+
+    public void pouziPredmet(String nazovPredmetu) {
+        var predmet = this.inventar.get(nazovPredmetu);
+        predmet.pouziSa();
+    }
 }
