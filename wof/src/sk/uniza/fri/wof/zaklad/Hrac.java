@@ -3,7 +3,6 @@ package sk.uniza.fri.wof.zaklad;
 import sk.uniza.fri.wof.prostredie.Miestnost;
 import sk.uniza.fri.wof.prostredie.Predmet;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Hrac {
@@ -16,11 +15,11 @@ public class Hrac {
     }
 
     public void posunVSmere(String smer) {
-        Miestnost novaMiestnost = this.aktualnaMiestnost.getMiestnostVSmere(smer);
-        if (novaMiestnost == null) {
+        var vychod = this.aktualnaMiestnost.getVychodVSmere(smer);
+        if (vychod == null) {
             System.out.println("Tam nie je vychod!");
         } else {
-            this.aktualnaMiestnost = novaMiestnost;
+            this.aktualnaMiestnost = vychod.getMiestnost();
             this.aktualnaMiestnost.vypisInfoOMiestnosti();
         }
     }

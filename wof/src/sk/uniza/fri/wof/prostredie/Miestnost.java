@@ -16,7 +16,7 @@ import java.util.HashMap;
  */
 public class Miestnost {
     private final String popisMiestnosti;
-    private final HashMap<String, Miestnost> vychody;
+    private final HashMap<String, Vychod> vychody;
     private final HashMap<String, Predmet> predmety;
 
     /**
@@ -33,7 +33,7 @@ public class Miestnost {
     }
 
     public void nastavVychod(String smer, Miestnost miestnost) {
-        this.vychody.put(smer, miestnost);
+        this.vychody.put(smer, new Vychod(miestnost));
     }
 
     /**
@@ -70,7 +70,7 @@ public class Miestnost {
         }
     }
 
-    public Miestnost getMiestnostVSmere(String smer) {
+    public Vychod getVychodVSmere(String smer) {
         return this.vychody.get(smer);
     }
 }
