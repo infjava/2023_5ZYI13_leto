@@ -20,7 +20,7 @@ public class HernySvet {
         kancelaria.nastavVychod("zapad", labak);
 
         terasa.polozPredmet(new ObycajnyPredmet("navleky"));
-        terasa.polozPredmet(new ObycajnyPredmet("hodinky"));
+        terasa.polozPredmet(new Hodinky());
         terasa.polozPredmet(new ObycajnyPredmet("kamen"));
         labak.polozPredmet(new ObycajnyPredmet("mys"));
         bufet.polozPredmet(new ObycajnyPredmet("bageta"));
