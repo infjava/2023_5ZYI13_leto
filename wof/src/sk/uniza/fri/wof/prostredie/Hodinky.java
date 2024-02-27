@@ -15,4 +15,9 @@ public class Hodinky implements Predmet {
         var now = LocalDateTime.now();
         System.out.println(dtf.format(now));
     }
+
+    @Override
+    public boolean mozemPolozit() {
+        return true;
+    }
 }

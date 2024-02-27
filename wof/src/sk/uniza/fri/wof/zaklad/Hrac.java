@@ -31,8 +31,13 @@ public class Hrac {
     }
 
     public void polozPredmet(String predmet) {
-        Predmet pokladanyPredmet = this.inventar.remove(predmet);
-        this.aktualnaMiestnost.polozPredmet(pokladanyPredmet);
+        Predmet pokladanyPredmet = this.inventar.get(predmet);
+        if (pokladanyPredmet.mozemPolozit()) {
+            this.inventar.remove(predmet);
+            this.aktualnaMiestnost.polozPredmet(pokladanyPredmet);
+        } else {
+            System.out.println("Sry, to nemde");
+        }
     }
 
     /**
