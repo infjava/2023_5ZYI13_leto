@@ -12,7 +12,7 @@ public class HernySvet {
 
         // inicializacia miestnosti = nastavenie vychodov
         terasa.nastavVychod("vychod", aula);
-        terasa.nastavVychod("juh", labak);
+        terasa.nastavVychod("juh", new VstupDoLabaku(labak));
         terasa.nastavVychod("zapad", bufet);
         aula.nastavVychod("zapad", terasa);
         labak.nastavVychod("sever", terasa);

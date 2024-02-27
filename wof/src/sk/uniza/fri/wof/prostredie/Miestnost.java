@@ -36,6 +36,10 @@ public class Miestnost {
         this.vychody.put(smer, new ObycajnyVychod(miestnost));
     }
 
+    public void nastavVychod(String smer, Vychod vychod) {
+        this.vychody.put(smer, vychod);
+    }
+
     /**
      * polozi predmet do miestnosti
      * @param predmet pokladany predmet
