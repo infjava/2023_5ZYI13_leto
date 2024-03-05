@@ -4,6 +4,7 @@ import sk.uniza.fri.wof.prostredie.KontrolaPolozenia;
 import sk.uniza.fri.wof.prostredie.Miestnost;
 import sk.uniza.fri.wof.prostredie.Pouzitelny;
 import sk.uniza.fri.wof.prostredie.SledovanieHraca;
+import sk.uniza.fri.wof.prostredie.predmety.ObycajnyPredmet;
 import sk.uniza.fri.wof.prostredie.predmety.Predmet;
 
 import java.util.HashMap;
@@ -105,5 +106,9 @@ public class Hrac {
 
     public void odstranPredmetZInventara(String nazov) {
         this.inventar.remove(nazov);
+    }
+
+    public void pridajPredmetDoInventara(Predmet predmet) {
+        this.inventar.put(predmet.getNazov(), predmet);
     }
 }
