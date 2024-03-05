@@ -1,5 +1,10 @@
 package sk.uniza.fri.wof.prostredie;
 
+import sk.uniza.fri.wof.prostredie.predmety.Hodinky;
+import sk.uniza.fri.wof.prostredie.predmety.Navleky;
+import sk.uniza.fri.wof.prostredie.predmety.ObycajnyPredmet;
+import sk.uniza.fri.wof.prostredie.vychody.VstupDoLabaku;
+
 public class HernySvet {
     private final Miestnost startovaciaMiestnost;
 
@@ -18,10 +23,11 @@ public class HernySvet {
         labak.nastavVychod("sever", terasa);
         labak.nastavVychod("vychod", kancelaria);
         kancelaria.nastavVychod("zapad", labak);
+        bufet.nastavVychod("vychod", terasa);
 
-        terasa.polozPredmet(new Navleky());
-        terasa.polozPredmet(new Hodinky());
         terasa.polozPredmet(new ObycajnyPredmet("kamen"));
+        terasa.polozPredmet(new Hodinky());
+        terasa.polozPredmet(new Navleky());
         labak.polozPredmet(new ObycajnyPredmet("mys"));
         bufet.polozPredmet(new ObycajnyPredmet("bageta"));
 

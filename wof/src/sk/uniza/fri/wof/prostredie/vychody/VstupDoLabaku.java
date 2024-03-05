@@ -1,5 +1,6 @@
-package sk.uniza.fri.wof.prostredie;
+package sk.uniza.fri.wof.prostredie.vychody;
 
+import sk.uniza.fri.wof.prostredie.Miestnost;
 import sk.uniza.fri.wof.zaklad.Hrac;
 
 public class VstupDoLabaku implements Vychod {
@@ -10,18 +11,13 @@ public class VstupDoLabaku implements Vychod {
     }
 
     @Override
-    public Miestnost getMiestnost() {
+    public Miestnost dajMiestnost() {
         return this.miestnost;
     }
 
     @Override
     public boolean mozemVstupit(Hrac hrac) {
-        var navleky = hrac.getPredmet("navleky");
-
-        if (navleky != null && navleky.jeNasadeny()) {
-            return true;
-        }
-
-        return false;
+        var navleky = hrac.najdiPredmet("navleky");
+        return navleky.isPresent() && navleky.get().jeNasadeny();
     }
 }

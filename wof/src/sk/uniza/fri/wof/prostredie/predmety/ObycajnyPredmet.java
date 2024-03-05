@@ -1,4 +1,4 @@
-package sk.uniza.fri.wof.prostredie;
+package sk.uniza.fri.wof.prostredie.predmety;
 
 public class ObycajnyPredmet implements Predmet {
     private final String nazov;
@@ -13,8 +13,8 @@ public class ObycajnyPredmet implements Predmet {
     }
 
     @Override
-    public void pouziSa() {
-        System.out.format("Predmet %s sa neda pouzit%n", this.nazov);
+    public void pouzi() {
+        System.out.printf("Predmet %s sa použiť nedá%n", this.nazov);
     }
 
     @Override

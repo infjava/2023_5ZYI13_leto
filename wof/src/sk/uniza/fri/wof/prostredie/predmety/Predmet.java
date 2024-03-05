@@ -1,9 +1,9 @@
-package sk.uniza.fri.wof.prostredie;
+package sk.uniza.fri.wof.prostredie.predmety;
 
 public interface Predmet {
     String getNazov();
 
-    void pouziSa();
+    void pouzi();
 
     boolean mozemPolozit();
 

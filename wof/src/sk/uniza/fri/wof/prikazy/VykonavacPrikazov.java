@@ -15,7 +15,7 @@ import sk.uniza.fri.wof.zaklad.Hrac;
 public class VykonavacPrikazov {
     // konstantne pole nazvov prikazov
     private static final String[] PLATNE_PRIKAZY = {
-        "chod", "zober", "poloz", "inventar", "ukonci", "pomoc", "pouzi"
+        "chod", "zober", "poloz", "inventar", "pouzi", "ukonci", "pomoc"
     };
 
     /**
@@ -62,28 +62,17 @@ public class VykonavacPrikazov {
             case "inventar":
                 hrac.vypisInventar();
                 return false;
+            case "pouzi":
+                this.pouziPredmet(prikaz, hrac);
+                return false;
             case "poloz":
                 this.polozPredmet(prikaz, hrac);
                 return false;
             case "ukonci":
                 return this.ukonciHru(prikaz);
-            case "pouzi":
-                this.pouziPredmet(prikaz, hrac);
-                return false;
             default:
                 return false;
         }
-    }
-
-    private void pouziPredmet(Prikaz prikaz, Hrac hrac) {
-        if (!prikaz.maParameter()) {
-            // ak prikaz nema parameter - druhe slovo - nevedno co polozit
-            System.out.println("Pouzi co?");
-            return;
-        }
-
-        var nazovPredmetu = prikaz.getParameter();
-        hrac.pouziPredmet(nazovPredmetu);
     }
 
     /**
@@ -134,8 +123,19 @@ public class VykonavacPrikazov {
         }
 
         String predmet = prikaz.getParameter();
-
         hrac.zoberPredmet(predmet);
+    }
+
+    private void pouziPredmet(Prikaz prikaz, Hrac hrac) {
+        if (!prikaz.maParameter()) {
+            // ak prikaz nema parameter - druhe slovo - nevedno co zobrat
+            System.out.println("Pouzi co?");
+            return;
+        }
+
+        String predmet = prikaz.getParameter();
+
+        hrac.pouziPredmet(predmet);
     }
 
     /**
@@ -154,7 +154,6 @@ public class VykonavacPrikazov {
         }
 
         String smer = prikaz.getParameter();
-
         // Pokus o opustenie aktualnej miestnosti danym vychodom.
         hrac.posunVSmere(smer);
     }
@@ -167,13 +166,6 @@ public class VykonavacPrikazov {
         System.out.println("Zabludil si. Si sam. Tulas sa po fakulte.");
         System.out.println();
         System.out.println("Mozes pouzit tieto prikazy:");
-        System.out.println("   " + String.join(" ", PLATNE_PRIKAZY));
-        /*
-        System.out.print("   ");
-        for (String prikaz : PLATNE_PRIKAZY) {
-            System.out.format("%s ", prikaz);
-        }
-        System.out.println();
-        */
+        System.out.println("   chod zober poloz inventar ukonci pomoc");
     }
 }
