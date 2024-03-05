@@ -6,6 +6,4 @@ public interface Predmet {
     void pouzi();
 
     boolean mozemPolozit();
-
-    boolean jeNasadeny();
 }

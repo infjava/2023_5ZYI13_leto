@@ -29,8 +29,7 @@ public class Navleky implements Predmet {
         return !this.suObute;
     }
 
-    @Override
-    public boolean jeNasadeny() {
+    public boolean suObute() {
         return this.suObute;
     }
 }
