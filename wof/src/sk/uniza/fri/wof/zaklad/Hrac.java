@@ -1,6 +1,9 @@
 package sk.uniza.fri.wof.zaklad;
 
+import sk.uniza.fri.wof.prostredie.KontrolaPolozenia;
 import sk.uniza.fri.wof.prostredie.Miestnost;
+import sk.uniza.fri.wof.prostredie.Pouzitelny;
+import sk.uniza.fri.wof.prostredie.SledovanieHraca;
 import sk.uniza.fri.wof.prostredie.predmety.Predmet;
 
 import java.util.HashMap;
@@ -26,7 +29,9 @@ public class Hrac {
             this.aktualnaMiestnost = vychod.get().dajMiestnost();
             this.aktualnaMiestnost.vypisInfoOMiestnosti();
             for (Predmet predmet : this.inventar.values()) {
-                predmet.hracZmenilMiestnost();
+                if (predmet instanceof SledovanieHraca predmetSledujuciHraca) {
+                    predmetSledujuciHraca.hracZmenilMiestnost();
+                }
             }
         }
     }
@@ -45,8 +50,7 @@ public class Hrac {
         Predmet pokladanyPredmet = this.inventar.remove(predmet);
         if (pokladanyPredmet == null) {
             System.out.println("Tento predmet v inventári nemáš");
-        }
-        else if (!pokladanyPredmet.mozemPolozit()) {
+        } else if (pokladanyPredmet instanceof KontrolaPolozenia kontrola && !kontrola.mozemPolozit()) {
             this.inventar.put(pokladanyPredmet.getNazov(), pokladanyPredmet);
             System.out.printf("Predmet %s sa nedá položiť%n", pokladanyPredmet.getNazov());
             return;
@@ -79,7 +83,11 @@ public class Hrac {
             System.out.println("Tento predmet nemáš");
             return;
         }
-        predmet.pouzi(this);
+        if (predmet instanceof Pouzitelny pouzitelnyPredmet) {
+            pouzitelnyPredmet.pouzi(this);
+        } else {
+            System.out.format("Predmet %s sa neda pouzit%n", nazov);
+        }
     }
 
     public Miestnost getAktualnaMiestnost() {

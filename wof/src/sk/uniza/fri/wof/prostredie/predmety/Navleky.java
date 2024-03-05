@@ -1,8 +1,10 @@
 package sk.uniza.fri.wof.prostredie.predmety;
 
+import sk.uniza.fri.wof.prostredie.KontrolaPolozenia;
+import sk.uniza.fri.wof.prostredie.Pouzitelny;
 import sk.uniza.fri.wof.zaklad.Hrac;
 
-public class Navleky implements Predmet {
+public class Navleky implements Predmet, Pouzitelny, KontrolaPolozenia {
     private boolean suObute;
 
     public Navleky() {
@@ -29,11 +31,6 @@ public class Navleky implements Predmet {
     @Override
     public boolean mozemPolozit() {
         return !this.suObute;
-    }
-
-    @Override
-    public void hracZmenilMiestnost() {
-
     }
 
     public boolean suObute() {

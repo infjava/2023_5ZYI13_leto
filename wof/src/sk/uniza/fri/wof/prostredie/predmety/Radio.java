@@ -1,8 +1,8 @@
 package sk.uniza.fri.wof.prostredie.predmety;
 
-import sk.uniza.fri.wof.zaklad.Hrac;
+import sk.uniza.fri.wof.prostredie.SledovanieHraca;
 
-public class Radio implements Predmet {
+public class Radio implements Predmet, SledovanieHraca {
     private boolean maBaterky;
 
     public Radio() {
@@ -12,16 +12,6 @@ public class Radio implements Predmet {
     @Override
     public String getNazov() {
         return "radio";
-    }
-
-    @Override
-    public void pouzi(Hrac hrac) {
-        System.out.println("Radio sa neda pouzit");
-    }
-
-    @Override
-    public boolean mozemPolozit() {
-        return true;
     }
 
     @Override

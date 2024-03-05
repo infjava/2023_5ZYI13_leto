@@ -1,8 +1,9 @@
 package sk.uniza.fri.wof.prostredie.predmety;
 
+import sk.uniza.fri.wof.prostredie.Pouzitelny;
 import sk.uniza.fri.wof.zaklad.Hrac;
 
-public class Baterky implements Predmet {
+public class Baterky implements Predmet, Pouzitelny {
     @Override
     public String getNazov() {
         return "baterky";
@@ -18,15 +19,5 @@ public class Baterky implements Predmet {
         } else {
             System.out.println("Baterky sa momentalne nedaju pouzit!");
         }
-    }
-
-    @Override
-    public boolean mozemPolozit() {
-        return true;
-    }
-
-    @Override
-    public void hracZmenilMiestnost() {
-
     }
 }
