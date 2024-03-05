@@ -1,6 +1,7 @@
 package sk.uniza.fri.wof.prostredie;
 
 import sk.uniza.fri.wof.prostredie.predmety.*;
+import sk.uniza.fri.wof.prostredie.vybavenie.Automat;
 import sk.uniza.fri.wof.prostredie.vychody.VstupDoLabaku;
 
 public class HernySvet {
@@ -30,6 +31,8 @@ public class HernySvet {
         bufet.polozPredmet(new ObycajnyPredmet("bageta"));
         terasa.polozPredmet(new Radio());
         terasa.polozPredmet(new Baterky());
+
+        bufet.pridajVybavenie(new Automat());
 
         this.startovaciaMiestnost = terasa;  // startovacia miestnost hry
     }
