@@ -76,10 +76,14 @@ public class Hrac {
             System.out.println("Tento predmet nemáš");
             return;
         }
-        predmet.pouzi();
+        predmet.pouzi(this);
     }
 
     public Miestnost getAktualnaMiestnost() {
         return this.aktualnaMiestnost;
+    }
+
+    public void odstranPredmetZInventara(String nazov) {
+        this.inventar.remove(nazov);
     }
 }

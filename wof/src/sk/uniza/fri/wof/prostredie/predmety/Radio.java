@@ -2,25 +2,29 @@ package sk.uniza.fri.wof.prostredie.predmety;
 
 import sk.uniza.fri.wof.zaklad.Hrac;
 
-public class ObycajnyPredmet implements Predmet {
-    private final String nazov;
+public class Radio implements Predmet {
+    private boolean maBaterky;
 
-    public ObycajnyPredmet(String nazov) {
-        this.nazov = nazov;
+    public Radio() {
+        this.maBaterky = false;
     }
 
     @Override
     public String getNazov() {
-        return this.nazov;
+        return "radio";
     }
 
     @Override
     public void pouzi(Hrac hrac) {
-        System.out.printf("Predmet %s sa použiť nedá%n", this.nazov);
+        System.out.println("Radio sa neda pouzit");
     }
 
     @Override
     public boolean mozemPolozit() {
         return true;
+    }
+
+    public void vlozBaterky() {
+        this.maBaterky = true;
     }
 }
