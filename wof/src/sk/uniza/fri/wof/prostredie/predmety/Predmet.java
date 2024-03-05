@@ -8,4 +8,6 @@ public interface Predmet {
     void pouzi(Hrac hrac);
 
     boolean mozemPolozit();
+
+    void hracZmenilMiestnost();
 }

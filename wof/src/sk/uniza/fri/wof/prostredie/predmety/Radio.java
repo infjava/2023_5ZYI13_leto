@@ -24,6 +24,13 @@ public class Radio implements Predmet {
         return true;
     }
 
+    @Override
+    public void hracZmenilMiestnost() {
+        if (this.maBaterky) {
+            System.out.println("RADIO: ♩ ♪ ♫ ♬ ♭ ♮ ♯ \uD83C\uDFBC \uD83C\uDFB5 \uD83C\uDFB6");
+        }
+    }
+
     public void vlozBaterky() {
         this.maBaterky = true;
     }

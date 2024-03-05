@@ -25,6 +25,9 @@ public class Hrac {
         } else {
             this.aktualnaMiestnost = vychod.get().dajMiestnost();
             this.aktualnaMiestnost.vypisInfoOMiestnosti();
+            for (Predmet predmet : this.inventar.values()) {
+                predmet.hracZmenilMiestnost();
+            }
         }
     }
 

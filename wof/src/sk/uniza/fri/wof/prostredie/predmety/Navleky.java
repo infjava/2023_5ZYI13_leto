@@ -31,6 +31,11 @@ public class Navleky implements Predmet {
         return !this.suObute;
     }
 
+    @Override
+    public void hracZmenilMiestnost() {
+
+    }
+
     public boolean suObute() {
         return this.suObute;
     }
