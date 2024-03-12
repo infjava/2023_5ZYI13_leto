@@ -16,7 +16,7 @@ public class Lovci extends Tvory {
         var akcie = super.dajAkcieNa(mojePolicko, druhePolicko);
 
         var obyvatelia = druhePolicko.getObyvatelia();
-        if (obyvatelia.isPresent() && !(obyvatelia.get() instanceof Magovia) && !(obyvatelia.get() instanceof Lovci)) {
+        if (obyvatelia.isPresent() && obyvatelia.get() instanceof Zver) {
             akcie.add(new AkciaLov(this.getPopulacia(), druhePolicko));
         }
 

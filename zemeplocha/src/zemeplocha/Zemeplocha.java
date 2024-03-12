@@ -1,10 +1,7 @@
 package zemeplocha;
 
 import hlavnyBalik.Policko;
-import obyvatelia.Lovci;
-import obyvatelia.Magovia;
-import obyvatelia.Tvory;
-import obyvatelia.TypObyvatela;
+import obyvatelia.*;
 
 public class Zemeplocha {
     //pocet poludnikov aj rovnobeziek je rovnaky
@@ -29,13 +26,13 @@ public class Zemeplocha {
             for (int j = 0; j < this.policka[i].length; j++) {
 
                 if ((cislo % 2) == 0) { //vela zveri
-                    this.policka[i][j].setObyvatelia(new Tvory (25, TypObyvatela.SRNKY));
+                    this.policka[i][j].setObyvatelia(new Zver(25, TypObyvatela.SRNKY));
                 } else {
                     if ((cislo % 5) == 0) {
                         if ((i % 2) == 0) { //sem tam ine
-                            this.policka[i][j].setObyvatelia(new Tvory(10, TypObyvatela.ZAJACE));
+                            this.policka[i][j].setObyvatelia(new Zver(10, TypObyvatela.ZAJACE));
                         } else {
-                            this.policka[i][j].setObyvatelia(new Tvory(10, TypObyvatela.SLIEPKY));
+                            this.policka[i][j].setObyvatelia(new Zver(10, TypObyvatela.SLIEPKY));
                         }
                     } else if ((cislo % 9) == 0) {
                         this.policka[i][j].setObyvatelia(new Magovia(5, 2));
