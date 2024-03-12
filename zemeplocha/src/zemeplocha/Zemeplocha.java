@@ -1,6 +1,7 @@
 package zemeplocha;
 
 import hlavnyBalik.Policko;
+import obyvatelia.Magovia;
 import obyvatelia.Tvory;
 import obyvatelia.TypObyvatela;
 
@@ -35,6 +36,8 @@ public class Zemeplocha {
                         } else {
                             this.policka[i][j].setObyvatelia(new Tvory(10, TypObyvatela.SLIEPKY));
                         }
+                    } else if ((cislo % 9) == 0) {
+                        this.policka[i][j].setObyvatelia(new Magovia(5, 2));
                     }
                 }
 
