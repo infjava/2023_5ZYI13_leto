@@ -8,8 +8,11 @@ import hlavnyBalik.Policko;
 import java.util.ArrayList;
 
 public class Magovia extends Tvory {
+    private final int koeficientMagie;
+
     public Magovia(int populacia, int koeficientMagie) {
         super(populacia, TypObyvatela.MAGOVIA);
+        this.koeficientMagie = koeficientMagie;
     }
 
     @Override
@@ -17,7 +20,7 @@ public class Magovia extends Tvory {
         ArrayList<Akcia> akcie = new ArrayList<>();
         var obyvatelia = druhePolicko.getObyvatelia();
         if (obyvatelia.isPresent() && !(obyvatelia.get() instanceof Magovia)) {
-            akcie.add(new AkciaMnozenie(mojePolicko, druhePolicko));
+            akcie.add(new AkciaMnozenie(this.koeficientMagie, druhePolicko));
         }
         return akcie;
     }

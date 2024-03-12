@@ -4,7 +4,12 @@ import hlavnyBalik.Policko;
 import zemeplocha.Zemeplocha;
 
 public class AkciaMnozenie implements Akcia {
-    public AkciaMnozenie(Policko mojePolicko, Policko druhePolicko) {
+    private final int koeficient;
+    private final Policko druhePolicko;
+
+    public AkciaMnozenie(int koeficient, Policko druhePolicko) {
+        this.koeficient = koeficient;
+        this.druhePolicko = druhePolicko;
     }
 
     @Override
@@ -14,6 +19,7 @@ public class AkciaMnozenie implements Akcia {
 
     @Override
     public void vykonaj(Zemeplocha zemeplocha) {
-        System.out.println("Mnozte sa!!!");
+        var obyvatelia = this.druhePolicko.getObyvatelia().orElseThrow();
+        obyvatelia.rozmnozSa(this.koeficient);
     }
 }
