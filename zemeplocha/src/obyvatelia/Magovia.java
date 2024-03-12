@@ -17,11 +17,17 @@ public class Magovia extends Tvory {
 
     @Override
     public ArrayList<Akcia> dajAkcieNa(Policko mojePolicko, Policko druhePolicko) {
-        ArrayList<Akcia> akcie = new ArrayList<>();
+        ArrayList<Akcia> akcie = super.dajAkcieNa(mojePolicko, druhePolicko);
+
         var obyvatelia = druhePolicko.getObyvatelia();
         if (obyvatelia.isPresent() && !(obyvatelia.get() instanceof Magovia)) {
             akcie.add(new AkciaMnozenie(this.koeficientMagie, druhePolicko));
         }
         return akcie;
+    }
+
+    @Override
+    public Tvory vytvorTvory(int pocetTvorov) {
+        return new Magovia(pocetTvorov, this.koeficientMagie);
     }
 }
