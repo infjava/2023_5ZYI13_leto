@@ -30,4 +30,14 @@ public class Magovia extends Ludia {
     protected Tvory vytvorTvory(int pocetTvorov) {
         return new Magovia(pocetTvorov, this.koeficientMagie);
     }
+
+    @Override
+    public void prijmiUtok(int pocetUtocnikov) {
+
+    }
+
+    @Override
+    public int vypocitajSiluProtiutoku(int pocetUtocnikov) {
+        return pocetUtocnikov;
+    }
 }

@@ -27,4 +27,18 @@ public class Rytieri extends Ludia {
     protected Tvory vytvorTvory(int pocetTvorov) {
         return new Rytieri(pocetTvorov);
     }
+
+    @Override
+    public void prijmiUtok(int pocetUtocnikov) {
+        this.upravPopulaciu(-pocetUtocnikov);
+    }
+
+    @Override
+    public int vypocitajSiluProtiutoku(int pocetUtocnikov) {
+        if (pocetUtocnikov > this.getPopulacia()) {
+            return this.getPopulacia();
+        } else {
+            return pocetUtocnikov;
+        }
+    }
 }

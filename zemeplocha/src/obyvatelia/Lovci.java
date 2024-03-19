@@ -27,4 +27,14 @@ public class Lovci extends Ludia {
     protected Tvory vytvorTvory(int pocetTvorov) {
         return new Lovci(pocetTvorov);
     }
+
+    @Override
+    public void prijmiUtok(int pocetUtocnikov) {
+        this.upravPopulaciu(-pocetUtocnikov * 2);
+    }
+
+    @Override
+    public int vypocitajSiluProtiutoku(int pocetUtocnikov) {
+        return 1;
+    }
 }

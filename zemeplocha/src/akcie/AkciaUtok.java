@@ -1,6 +1,7 @@
 package akcie;
 
 import hlavnyBalik.Policko;
+import obyvatelia.Ludia;
 import zemeplocha.Zemeplocha;
 
 import javax.swing.*;
@@ -31,18 +32,15 @@ public class AkciaUtok implements Akcia {
             return;
         }
 
-        var cielovyObyvatelia = this.druhePolicko.getObyvatelia().orElseThrow();
-        if (pocetUtocnikov > cielovyObyvatelia.getPopulacia()) {
-            pocetUtocnikov = cielovyObyvatelia.getPopulacia();
-        }
+        var cielovyObyvatelia = (Ludia) this.druhePolicko.getObyvatelia().orElseThrow();
 
-        cielovyObyvatelia.upravPopulaciu(-pocetUtocnikov);
+        cielovyObyvatelia.prijmiUtok(pocetUtocnikov);
         if (cielovyObyvatelia.getPopulacia() <= 0) {
             this.druhePolicko.zruseniObyvatelia();
         }
 
         var mojiObyvatelia = this.mojePolicko.getObyvatelia().orElseThrow();
-        mojiObyvatelia.upravPopulaciu(-pocetUtocnikov);
+        mojiObyvatelia.upravPopulaciu(-cielovyObyvatelia.vypocitajSiluProtiutoku(pocetUtocnikov));
         if (mojiObyvatelia.getPopulacia() <= 0) {
             this.mojePolicko.zruseniObyvatelia();
         }
