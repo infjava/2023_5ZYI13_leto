@@ -38,6 +38,8 @@ public class Zemeplocha {
                         this.policka[i][j].setObyvatelia(new Magovia(5, 2));
                     } else if ((cislo % 11) == 0) {
                         this.policka[i][j].setObyvatelia(new Lovci(30));
+                    } else if ((cislo % 13) == 0) {
+                        this.policka[i][j].setObyvatelia(new Rytieri(25));
                     }
                 }
 
