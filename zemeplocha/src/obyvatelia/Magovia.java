@@ -7,7 +7,7 @@ import hlavnyBalik.Policko;
 
 import java.util.ArrayList;
 
-public class Magovia extends Tvory {
+public class Magovia extends Ludia {
     private final int koeficientMagie;
 
     public Magovia(int populacia, int koeficientMagie) {

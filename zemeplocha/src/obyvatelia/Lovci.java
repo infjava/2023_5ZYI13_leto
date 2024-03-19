@@ -6,7 +6,7 @@ import hlavnyBalik.Policko;
 
 import java.util.ArrayList;
 
-public class Lovci extends Tvory {
+public class Lovci extends Ludia {
     public Lovci(int populacia) {
         super(populacia, TypObyvatela.LOVCI);
     }
