@@ -6,7 +6,7 @@ import hlavnyBalik.Policko;
 
 import java.util.ArrayList;
 
-public class Tvory {
+public abstract class Tvory {
     //pocet kusov danych tvorov tvoriacich obyvatelstvo
     private int populacia;
     private final TypObyvatela typObyvatela;
@@ -64,9 +64,7 @@ public class Tvory {
         return this.vytvorTvory(pocetTvorov);
     }
 
-    public Tvory vytvorTvory(int pocetTvorov) {
-        return new Tvory(pocetTvorov, this.typObyvatela);
-    }
+    public abstract Tvory vytvorTvory(int pocetTvorov);
 
     public void rozmnozSa(int koeficient) {
         this.populacia *= koeficient;
