@@ -6,7 +6,7 @@ public class Zver extends Tvory {
     }
 
     @Override
-    public Tvory vytvorTvory(int pocetTvorov) {
+    protected Tvory vytvorTvory(int pocetTvorov) {
         return new Zver(pocetTvorov, this.getTypObyvatela());
     }
 }

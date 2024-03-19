@@ -64,7 +64,7 @@ public abstract class Tvory {
         return this.vytvorTvory(pocetTvorov);
     }
 
-    public abstract Tvory vytvorTvory(int pocetTvorov);
+    protected abstract Tvory vytvorTvory(int pocetTvorov);
 
     public void rozmnozSa(int koeficient) {
         this.populacia *= koeficient;

@@ -24,7 +24,7 @@ public class Rytieri extends Ludia {
     }
 
     @Override
-    public Tvory vytvorTvory(int pocetTvorov) {
+    protected Tvory vytvorTvory(int pocetTvorov) {
         return new Rytieri(pocetTvorov);
     }
 }
