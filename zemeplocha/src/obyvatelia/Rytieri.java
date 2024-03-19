@@ -22,4 +22,9 @@ public class Rytieri extends Ludia {
 
         return akcie;
     }
+
+    @Override
+    public Tvory vytvorTvory(int pocetTvorov) {
+        return new Rytieri(pocetTvorov);
+    }
 }
