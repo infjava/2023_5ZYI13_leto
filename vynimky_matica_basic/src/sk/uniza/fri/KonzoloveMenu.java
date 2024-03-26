@@ -1,6 +1,7 @@
 package sk.uniza.fri;
 
 import sk.uniza.fri.nacitavanie.NacitavacSuboru;
+import sk.uniza.fri.vynimky.NespravneRozmeryException;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -50,10 +51,12 @@ public class KonzoloveMenu {
                     System.out.println("Vysledok nasobenia ulozeny do matice C");
                     break;
                 case 4:
-                    var vysledok = poleMatic[0].vydelMaticePoPrvkoch(poleMatic[1]);
-                    if (vysledok != null) {
+                    try {
+                        poleMatic[2] = poleMatic[0].vydelMaticePoPrvkoch(poleMatic[1]);
+
                         System.out.println("Vysledok delenia po prvkoch ulozeny do matice C");
-                        poleMatic[2] = vysledok;
+                    } catch (NespravneRozmeryException e) {
+                        System.out.println("Neda sa delit - nespravne rozmery");
                     }
                     break;
                 case 5:
