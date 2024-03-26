@@ -59,6 +59,20 @@ public class Matica {
         }
         return new Matica(vysledok);
     }
+
+    public Matica scitajMaticePoPrvkoch(Matica mat2) throws NespravneRozmeryException {
+        if (this.pocetRiadkov != mat2.getPocetRiadkov() || this.pocetStlpcov != mat2.getPocetStlpcov()) {
+            throw new NespravneRozmeryException();
+        }
+
+        double[][] vysledok = new double[this.pocetRiadkov][this.pocetStlpcov];
+        for (int i = 0; i < vysledok.length; i++) {
+            for (int j = 0; j < vysledok[0].length; j++) {
+                vysledok[i][j] = this.dajPrvok(i, j) + mat2.dajPrvok(i, j);
+            }
+        }
+        return new Matica(vysledok);
+    }
     // operacia jednej s druhou
     public Matica vynasobMaticou(Matica mat2) throws NespravneRozmeryException {
         if (this.pocetStlpcov != mat2.getPocetRiadkov()) {
