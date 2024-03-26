@@ -18,7 +18,7 @@ public class KonzoloveMenu {
         this.poleMatic = new Matica[3];
     }
 
-    public void spusti() throws FileNotFoundException {
+    public void spusti() {
         Scanner sc = new Scanner(System.in);
         while(true) {
             System.out.println("----------------------------------------");
@@ -39,7 +39,11 @@ public class KonzoloveMenu {
             switch (volba) {
                 case 1:
                     // nacita maticu podla zadanieho indexu
-                    poleMatic[this.vyberMatice(sc)] = this.nacitanieMatice(sc);
+                    try {
+                        poleMatic[this.vyberMatice(sc)] = this.nacitanieMatice(sc);
+                    } catch (FileNotFoundException e) {
+                        System.out.println("Nenasiel sa subor");
+                    }
                     break;
                 case 2:
                     int indexVyberu = this.vyberMatice(sc);
