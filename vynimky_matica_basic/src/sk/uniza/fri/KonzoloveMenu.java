@@ -3,6 +3,7 @@ package sk.uniza.fri;
 import sk.uniza.fri.nacitavanie.NacitavacSuboru;
 import sk.uniza.fri.operacie.Delenie;
 import sk.uniza.fri.operacie.Scitanie;
+import sk.uniza.fri.vynimky.ChybaVykonaniaOperacieException;
 import sk.uniza.fri.vynimky.DelenieNulouException;
 import sk.uniza.fri.vynimky.NespravneRozmeryException;
 
@@ -64,8 +65,12 @@ public class KonzoloveMenu {
                         System.out.println("Vysledok delenia po prvkoch ulozeny do matice C");
                     } catch (NespravneRozmeryException e) {
                         System.out.println("Neda sa delit - nespravne rozmery");
-                    } catch (DelenieNulouException e) {
-                        System.out.println("Davaj pozor! Delis nulou");
+                    } catch (ChybaVykonaniaOperacieException e) {
+                        if (e.getCause() instanceof DelenieNulouException) {
+                            System.out.format("Davaj pozor! Delis nulou na riadku %d a stlpci %d%n", e.getRiadok(), e.getStlpec());
+                        } else {
+                            throw new RuntimeException(e);
+                        }
                     }
                     break;
                 case 5:
@@ -75,7 +80,7 @@ public class KonzoloveMenu {
                         System.out.println("Vysledok scitania po prvkoch ulozeny do matice C");
                     } catch (NespravneRozmeryException e) {
                         System.out.println("Neda sa scitat - nespravne rozmery");
-                    } catch (DelenieNulouException e) {
+                    } catch (ChybaVykonaniaOperacieException e) {
                         throw new RuntimeException(e);
                     }
                     break;
