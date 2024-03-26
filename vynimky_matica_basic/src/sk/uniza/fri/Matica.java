@@ -60,7 +60,11 @@ public class Matica {
         return new Matica(vysledok);
     }
     // operacia jednej s druhou
-    public Matica vynasobMaticou(Matica mat2) {
+    public Matica vynasobMaticou(Matica mat2) throws NespravneRozmeryException {
+        if (this.pocetStlpcov != mat2.getPocetRiadkov()) {
+            throw new NespravneRozmeryException();
+        }
+
         double[][] result = new double[ this.pocetRiadkov][mat2.pocetStlpcov];
         for (int i = 0; i <  this.pocetRiadkov; i++) {
             for (int j = 0; j < mat2.pocetStlpcov; j++) {
