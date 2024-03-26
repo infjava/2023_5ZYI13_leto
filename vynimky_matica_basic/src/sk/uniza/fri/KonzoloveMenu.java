@@ -50,8 +50,12 @@ public class KonzoloveMenu {
                     System.out.println("Vysledok nasobenia ulozeny do matice C");
                     break;
                 case 4:
-                    poleMatic[2] = poleMatic[0].vydelMaticePoPrvkoch(poleMatic[1]);
-                    System.out.println("Vysledok delenia po prvkoch ulozeny do matice C");
+                    if (poleMatic[0].getPocetRiadkov() != poleMatic[1].getPocetRiadkov() || poleMatic[0].getPocetStlpcov() != poleMatic[1].getPocetStlpcov()) {
+                        System.out.println("Neda sa delit - nespravne rozmery");
+                    } else {
+                        poleMatic[2] = poleMatic[0].vydelMaticePoPrvkoch(poleMatic[1]);
+                        System.out.println("Vysledok delenia po prvkoch ulozeny do matice C");
+                    }
                     break;
                 case 5:
                     System.out.println("Toto si zial este neimplementoval");
