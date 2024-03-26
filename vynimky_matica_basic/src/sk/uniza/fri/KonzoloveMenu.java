@@ -1,6 +1,8 @@
 package sk.uniza.fri;
 
 import sk.uniza.fri.nacitavanie.NacitavacSuboru;
+import sk.uniza.fri.operacie.Delenie;
+import sk.uniza.fri.operacie.Scitanie;
 import sk.uniza.fri.vynimky.NespravneRozmeryException;
 
 import java.io.FileNotFoundException;
@@ -56,7 +58,7 @@ public class KonzoloveMenu {
                     break;
                 case 4:
                     try {
-                        poleMatic[2] = poleMatic[0].vydelMaticePoPrvkoch(poleMatic[1]);
+                        poleMatic[2] = poleMatic[0].vykonajOperaciuPoPrvkoch(poleMatic[1], new Delenie());
 
                         System.out.println("Vysledok delenia po prvkoch ulozeny do matice C");
                     } catch (NespravneRozmeryException e) {
@@ -65,7 +67,7 @@ public class KonzoloveMenu {
                     break;
                 case 5:
                     try {
-                        poleMatic[2] = poleMatic[0].scitajMaticePoPrvkoch(poleMatic[1]);
+                        poleMatic[2] = poleMatic[0].vykonajOperaciuPoPrvkoch(poleMatic[1], new Scitanie());
 
                         System.out.println("Vysledok scitania po prvkoch ulozeny do matice C");
                     } catch (NespravneRozmeryException e) {

@@ -1,6 +1,7 @@
 package sk.uniza.fri;
 
 
+import sk.uniza.fri.operacie.Operacia;
 import sk.uniza.fri.vynimky.NespravneRozmeryException;
 
 import java.util.Random;
@@ -46,7 +47,7 @@ public class Matica {
         return this.polePrvkov[i][j];
     }
 
-    public Matica vydelMaticePoPrvkoch(Matica mat2) throws NespravneRozmeryException {
+    public Matica vykonajOperaciuPoPrvkoch(Matica mat2, Operacia operacia) throws NespravneRozmeryException {
         if (this.pocetRiadkov != mat2.getPocetRiadkov() || this.pocetStlpcov != mat2.getPocetStlpcov()) {
             throw new NespravneRozmeryException();
         }
@@ -54,25 +55,12 @@ public class Matica {
         double[][] vysledok = new double[this.pocetRiadkov][this.pocetStlpcov];
         for (int i = 0; i < vysledok.length; i++) {
             for (int j = 0; j < vysledok[0].length; j++) {
-                vysledok[i][j] = this.dajPrvok(i, j) / mat2.dajPrvok(i, j);
+                vysledok[i][j] = operacia.vykonaj(this.dajPrvok(i, j), mat2.dajPrvok(i, j));
             }
         }
         return new Matica(vysledok);
     }
 
-    public Matica scitajMaticePoPrvkoch(Matica mat2) throws NespravneRozmeryException {
-        if (this.pocetRiadkov != mat2.getPocetRiadkov() || this.pocetStlpcov != mat2.getPocetStlpcov()) {
-            throw new NespravneRozmeryException();
-        }
-
-        double[][] vysledok = new double[this.pocetRiadkov][this.pocetStlpcov];
-        for (int i = 0; i < vysledok.length; i++) {
-            for (int j = 0; j < vysledok[0].length; j++) {
-                vysledok[i][j] = this.dajPrvok(i, j) + mat2.dajPrvok(i, j);
-            }
-        }
-        return new Matica(vysledok);
-    }
     // operacia jednej s druhou
     public Matica vynasobMaticou(Matica mat2) throws NespravneRozmeryException {
         if (this.pocetStlpcov != mat2.getPocetRiadkov()) {
