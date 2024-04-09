@@ -6,6 +6,7 @@ public class Main {
         klietkaNaLeva.vypisPopis();
         klietkaNaLeva.vlozZviera(lev);
         klietkaNaLeva.vypisPopis();
+        klietkaNaLeva.hodPotravu(new Steak());
 //        klietkaNaLeva.vlozZviera(new Mys());
 //        klietkaNaLeva.vypisPopis();
 
@@ -14,6 +15,7 @@ public class Main {
         klietkaNaMys.vypisPopis();
         klietkaNaMys.vlozZviera(mys);
         klietkaNaMys.vypisPopis();
+        klietkaNaMys.hodPotravu(new Syr());
 //        klietkaNaMys.vlozZviera(new Lev("Igor"));
 //        klietkaNaMys.vypisPopis();
 
@@ -22,6 +24,7 @@ public class Main {
         klietkaNaZajaca.vypisPopis();
         klietkaNaZajaca.vlozZviera(zajac);
         klietkaNaZajaca.vypisPopis();
+        klietkaNaZajaca.hodPotravu(new Mrkva());
 //
 //        var divnaKlietka = new Klietka<Integer>();
 //        divnaKlietka.vypisPopis();

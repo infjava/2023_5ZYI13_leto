@@ -18,4 +18,8 @@ public class Klietka<E extends Zviera> {
     public void vlozZviera(E zviera) {
         this.zviera = zviera;
     }
+
+    public void hodPotravu(Jedlo jedlo) {
+        this.zviera.zozer(jedlo);
+    }
 }
