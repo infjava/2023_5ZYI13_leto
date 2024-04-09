@@ -9,4 +9,13 @@ public class Lev extends Zviera implements Nazvany {
     public String getMeno() {
         return this.meno;
     }
+
+    @Override
+    public void zozer(Jedlo jedlo) {
+        if (jedlo instanceof Steak) {
+            System.out.println("Lev zozral steak");
+        } else {
+            System.out.println("Lev chce steak, nie takuto hovadinu");
+        }
+    }
 }

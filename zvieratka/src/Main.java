@@ -7,6 +7,7 @@ public class Main {
         klietkaNaLeva.vlozZviera(lev);
         klietkaNaLeva.vypisPopis();
         klietkaNaLeva.hodPotravu(new Steak());
+//        klietkaNaLeva.hodPotravu(new Syr());
 //        klietkaNaLeva.vlozZviera(new Mys());
 //        klietkaNaLeva.vypisPopis();
 
