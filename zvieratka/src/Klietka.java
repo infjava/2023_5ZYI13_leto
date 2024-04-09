@@ -1,8 +1,7 @@
 /**
  * @param <E> typ zvierata v klietke
- * @param <T> typ zradla
  */
-public class Klietka<E extends Zviera<T>, T extends Jedlo> {
+public class Klietka<E extends Zviera<E>> {
     private E zviera;
 
     public Klietka() {
@@ -23,7 +22,7 @@ public class Klietka<E extends Zviera<T>, T extends Jedlo> {
         this.zviera = zviera;
     }
 
-    public void hodPotravu(T jedlo) {
+    public void hodPotravu(Jedlo<E> jedlo) {
         this.zviera.zozer(jedlo);
     }
 }

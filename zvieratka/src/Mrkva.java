@@ -1,2 +1,2 @@
-public class Mrkva extends Jedlo {
+public class Mrkva extends Jedlo<Zajac> {
 }

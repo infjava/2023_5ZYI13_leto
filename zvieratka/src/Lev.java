@@ -1,4 +1,4 @@
-public class Lev extends Zviera<Steak> implements Nazvany {
+public class Lev extends Zviera<Lev> implements Nazvany {
     private final String meno;
 
     public Lev(String meno) {
@@ -11,7 +11,7 @@ public class Lev extends Zviera<Steak> implements Nazvany {
     }
 
     @Override
-    public void zozer(Steak jedlo) {
+    public void zozer(Jedlo<Lev> jedlo) {
         System.out.println("Lev zozral steak");
     }
 }

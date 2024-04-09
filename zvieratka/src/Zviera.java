@@ -1,6 +1,6 @@
 /**
- * @param <T> typ zradla
+ * @param <T> zviera
  */
-public abstract class Zviera<T extends Jedlo> {
-    public abstract void zozer(T jedlo);
+public abstract class Zviera<T extends Zviera<T>> {
+    public abstract void zozer(Jedlo<T> jedlo);
 }

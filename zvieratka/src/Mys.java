@@ -1,6 +1,6 @@
-public class Mys extends Zviera<Syr> {
+public class Mys extends Zviera<Mys> {
     @Override
-    public void zozer(Syr jedlo) {
+    public void zozer(Jedlo<Mys> jedlo) {
         System.out.println("Mys zozrala syr");
     }
 }
