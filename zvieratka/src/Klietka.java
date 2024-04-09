@@ -1,5 +1,5 @@
-public class Klietka {
-    private Zviera zviera;
+public class Klietka<E> {
+    private E zviera;
 
     public Klietka() {
         this.zviera = null;
@@ -15,7 +15,7 @@ public class Klietka {
         }
     }
 
-    public void vlozZviera(Zviera zviera) {
+    public void vlozZviera(E zviera) {
         this.zviera = zviera;
     }
 }
