@@ -1,2 +1,2 @@
-public class Syr extends Jedlo<Mys> {
+public class Syr implements Jedlo<Mys> {
 }

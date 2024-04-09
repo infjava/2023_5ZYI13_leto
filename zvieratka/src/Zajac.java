@@ -1,4 +1,4 @@
-public class Zajac extends Zviera<Zajac> implements Nazvany {
+public class Zajac extends Zviera<Zajac> implements Nazvany, Jedlo<Lev> {
     private final String meno;
 
     public Zajac(String meno) {

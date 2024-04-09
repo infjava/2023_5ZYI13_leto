@@ -1,2 +1,2 @@
-public class Steak extends Jedlo<Lev> {
+public class Steak implements Jedlo<Lev> {
 }
