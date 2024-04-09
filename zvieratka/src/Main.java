@@ -12,5 +12,11 @@ public class Main {
         klietkaNaMys.vypisPopis();
         klietkaNaMys.vlozZviera(mys);
         klietkaNaMys.vypisPopis();
+
+        var zajac = new Zajac("No pockaj");
+        var klietkaNaZajaca = new Klietka();
+        klietkaNaZajaca.vypisPopis();
+        klietkaNaZajaca.vlozZviera(zajac);
+        klietkaNaZajaca.vypisPopis();
     }
 }
