@@ -12,10 +12,10 @@ public class Zajac extends Zviera implements Nazvany {
 
     @Override
     public void zozer(Jedlo jedlo) {
-        if (jedlo instanceof Mrkva) {
-            System.out.println("Zajac zozral mrkvu");
-        } else {
-            System.out.println("Zajac toto nelubi");
+        if (!(jedlo instanceof Mrkva)) {
+            throw new NespravnaPotravaException();
         }
+
+        System.out.println("Zajac zozral mrkvu");
     }
 }
