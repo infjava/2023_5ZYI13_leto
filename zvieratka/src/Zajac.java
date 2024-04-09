@@ -1,4 +1,4 @@
-public class Zajac implements Nazvany {
+public class Zajac extends Zviera implements Nazvany {
     private final String meno;
 
     public Zajac(String meno) {
