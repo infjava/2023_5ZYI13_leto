@@ -18,5 +18,10 @@ public class Main {
         klietkaNaZajaca.vypisPopis();
         klietkaNaZajaca.vlozZviera(zajac);
         klietkaNaZajaca.vypisPopis();
+
+        var divnaKlietka = new Klietka();
+        divnaKlietka.vypisPopis();
+        divnaKlietka.vlozZviera(50);
+        divnaKlietka.vypisPopis();
     }
 }
