@@ -1,10 +1,6 @@
-public class Mys extends Zviera {
+public class Mys extends Zviera<Syr> {
     @Override
-    public void zozer(Jedlo jedlo) {
-        if (!(jedlo instanceof Syr)) {
-            throw new NespravnaPotravaException();
-        }
-
+    public void zozer(Syr jedlo) {
         System.out.println("Mys zozrala syr");
     }
 }
