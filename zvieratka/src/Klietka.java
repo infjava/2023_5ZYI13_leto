@@ -1,4 +1,4 @@
-public class Klietka<E> {
+public class Klietka<E extends Zviera> {
     private E zviera;
 
     public Klietka() {

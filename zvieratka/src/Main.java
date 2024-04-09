@@ -22,10 +22,10 @@ public class Main {
         klietkaNaZajaca.vypisPopis();
         klietkaNaZajaca.vlozZviera(zajac);
         klietkaNaZajaca.vypisPopis();
-
-        var divnaKlietka = new Klietka<Integer>();
-        divnaKlietka.vypisPopis();
-        divnaKlietka.vlozZviera(50);
-        divnaKlietka.vypisPopis();
+//
+//        var divnaKlietka = new Klietka<Integer>();
+//        divnaKlietka.vypisPopis();
+//        divnaKlietka.vlozZviera(50);
+//        divnaKlietka.vypisPopis();
     }
 }
