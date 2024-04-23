@@ -20,6 +20,8 @@ public class OknoSOtazkou {
         var tlacidloAno = new JButton("Áno");
         var tlacidloNie = new JButton("Nie");
 
+        tlacidloNie.setFocusable(false);
+
         this.pridajAkcie(tlacidloAno, tlacidloNie);
         this.pridajAkcie(tlacidloNie, tlacidloAno);
 
@@ -41,7 +43,9 @@ public class OknoSOtazkou {
             @Override
             public void mouseEntered(MouseEvent e) {
                 tlacidlo.setText("Áno");
+                tlacidlo.setFocusable(true);
                 tlacidloDruhe.setText("Nie");
+                tlacidloDruhe.setFocusable(false);
             }
         });
     }
