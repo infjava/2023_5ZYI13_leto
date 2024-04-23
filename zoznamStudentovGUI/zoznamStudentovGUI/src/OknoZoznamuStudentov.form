@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="OknoZoznamuStudentov">
+  <grid id="27dc6" binding="obsahOkna" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="20" y="20" width="500" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none"/>
+    <children>
+      <component id="4e1d8" class="javax.swing.JList" binding="zoznamStudentov">
+        <constraints border-constraint="Center"/>
+        <properties/>
+      </component>
+      <grid id="8b4c1" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+        <constraints border-constraint="South"/>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="c4829" class="javax.swing.JButton" binding="pridajButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Pridaj"/>
+            </properties>
+          </component>
+          <component id="e7497" class="javax.swing.JButton" binding="odstranButton">
+            <constraints/>
+            <properties>
+              <text value="Odstráň"/>
+            </properties>
+          </component>
+          <component id="d283e" class="javax.swing.JButton" binding="upravButton" default-binding="true">
+            <constraints/>
+            <properties>
+              <text value="Uprav"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
