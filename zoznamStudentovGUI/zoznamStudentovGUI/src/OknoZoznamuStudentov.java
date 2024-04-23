@@ -25,6 +25,13 @@ public class OknoZoznamuStudentov {
         this.okno.add(this.obsahOkna);
 
         this.okno.pack();
+
+        this.pridajButton.addActionListener(e -> this.pridajStudenta());
+    }
+
+    private void pridajStudenta() {
+        var oknoPridajStudenta = new PridajStudenta();
+        oknoPridajStudenta.setVisible(true);
     }
 
     public void zobraz() {
