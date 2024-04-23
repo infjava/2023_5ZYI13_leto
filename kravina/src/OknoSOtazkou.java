@@ -17,7 +17,7 @@ public class OknoSOtazkou {
         tlacidla.setLayout(new GridLayout());
         var tlacidloAno = new JButton("Áno");
 
-        tlacidloAno.addActionListener((ActionEvent e) -> {
+        tlacidloAno.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "No vidíš, len sa treba snažiť!");
             System.exit(0);
         });
