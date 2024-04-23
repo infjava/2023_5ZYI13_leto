@@ -14,7 +14,11 @@ public class OknoSOtazkou {
 
         var tlacidla = new JPanel();
         tlacidla.setLayout(new GridLayout());
-        tlacidla.add(new JButton("Áno"));
+        var tlacidloAno = new JButton("Áno");
+
+        tlacidloAno.addActionListener(new KliknuteAnoListener());
+
+        tlacidla.add(tlacidloAno);
         tlacidla.add(new JButton("Nie"));
 
         this.okno.add(tlacidla, BorderLayout.CENTER);
