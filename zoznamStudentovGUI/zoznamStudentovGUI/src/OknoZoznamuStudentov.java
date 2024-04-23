@@ -30,7 +30,7 @@ public class OknoZoznamuStudentov {
     }
 
     private void pridajStudenta() {
-        var oknoPridajStudenta = new PridajStudenta();
+        var oknoPridajStudenta = new PridajStudenta(this.modelStudentov);
         oknoPridajStudenta.setVisible(true);
     }
 
