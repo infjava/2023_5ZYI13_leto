@@ -5,8 +5,12 @@ public class PridajStudenta extends JDialog {
     private JPanel contentPane;
     private JButton buttonOK;
     private JButton buttonCancel;
+    private JTextField textField1;
+    private JTextField textField2;
 
     public PridajStudenta() {
+        this.setTitle("Pridaj študenta");
+
         this.setContentPane(this.contentPane);
         this.setModal(true);
         this.getRootPane().setDefaultButton(this.buttonOK);
@@ -31,6 +35,8 @@ public class PridajStudenta extends JDialog {
         );
 
         this.pack();
+
+        this.setResizable(false);
     }
 
     private void onOK() {
