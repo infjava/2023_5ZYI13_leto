@@ -40,6 +40,12 @@ public class Databaza implements Iterable<Osoba> {
             subor.writeInt(MAGIC_NUMBER);
             subor.writeInt(VERZIA);
 
+            subor.writeInt(this.osoby.size());
+
+            for (Osoba osoba : this.osoby) {
+                osoba.ulozDoSuboru(subor);
+            }
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -56,6 +62,13 @@ public class Databaza implements Iterable<Osoba> {
                 throw new RuntimeException("Chybna verzia programu");
             }
 
+            var pocetOsob = subor.readInt();
+            this.osoby.clear();
+            for (int i = 0; i < pocetOsob; i++) {
+                var osoba = new Osoba();
+                osoba.nacitajZoSuboru(subor);
+                this.osoby.add(osoba);
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

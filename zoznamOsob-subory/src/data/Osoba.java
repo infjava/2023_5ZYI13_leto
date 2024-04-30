@@ -1,5 +1,8 @@
 package data;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.io.Serializable;
 
 public class Osoba implements Serializable {
@@ -44,5 +47,19 @@ public class Osoba implements Serializable {
     @Override
     public String toString() {
         return this.priezvisko + " " + this.meno + " [" + this.vek + "]";
+    }
+
+    public void ulozDoSuboru(DataOutputStream subor)
+            throws IOException {
+        subor.writeUTF(this.meno);
+        subor.writeUTF(this.priezvisko);
+        subor.writeInt(this.vek);
+    }
+
+    public void nacitajZoSuboru(DataInputStream subor)
+            throws IOException {
+        this.meno = subor.readUTF();
+        this.priezvisko = subor.readUTF();
+        this.vek = subor.readInt();
     }
 }
