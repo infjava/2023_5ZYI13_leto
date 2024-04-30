@@ -92,7 +92,7 @@ public class OsobyOkienko {
             if (!vybratySubor.getName().contains(".")) {
                 vybrataCesta += ".osoba";
             }
-            System.out.println(vybrataCesta);
+            this.db.ulozDoSuboru(vybrataCesta);
         }
     }
 
@@ -108,7 +108,7 @@ public class OsobyOkienko {
             }
         } while (vyberSuboru.getSelectedFile() == null || !vyberSuboru.getSelectedFile().exists());
 
-        System.out.println(vyberSuboru.getSelectedFile().getAbsolutePath());
+        this.db.nacitajZoSuboru(vyberSuboru.getSelectedFile().getAbsolutePath());
     }
 
     private void nastavFiltre(JFileChooser vyberSuboru) {

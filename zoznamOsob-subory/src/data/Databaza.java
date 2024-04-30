@@ -32,4 +32,14 @@ public class Databaza implements Iterable<Osoba> {
         this.osoby.add(new Osoba("Janko", "aaaa", 4));
     }
 
+    public void ulozDoSuboru(String cesta) {
+        try (var subor = new ObjectOutputStream(new FileOutputStream(new File(cesta)))) {
+            subor.writeObject(this.osoby);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void nacitajZoSuboru(String cesta) {
+    }
 }
