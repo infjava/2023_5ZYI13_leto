@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class Databaza implements Iterable<Osoba> {
     private static final int MAGIC_NUMBER = 526485253;
-    private static final int VERZIA = 1;
+    private static final int VERZIA = 2;
 
     private ArrayList<Osoba> osoby;
 
@@ -66,7 +66,7 @@ public class Databaza implements Iterable<Osoba> {
             this.osoby.clear();
             for (int i = 0; i < pocetOsob; i++) {
                 var osoba = new Osoba();
-                osoba.nacitajZoSuboru(subor);
+                osoba.nacitajZoSuboru(subor, verzia);
                 this.osoby.add(osoba);
             }
         } catch (IOException e) {

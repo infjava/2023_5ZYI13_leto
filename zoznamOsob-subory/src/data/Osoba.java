@@ -64,12 +64,18 @@ public class Osoba implements Serializable {
         subor.writeUTF(this.meno);
         subor.writeUTF(this.priezvisko);
         subor.writeInt(this.vek);
+        subor.writeUTF(this.miestoNarodenia);
     }
 
-    public void nacitajZoSuboru(DataInputStream subor)
+    public void nacitajZoSuboru(DataInputStream subor, int verzia)
             throws IOException {
         this.meno = subor.readUTF();
         this.priezvisko = subor.readUTF();
         this.vek = subor.readInt();
+        if (verzia >= 2) {
+            this.miestoNarodenia = subor.readUTF();
+        } else {
+            this.miestoNarodenia = "-";
+        }
     }
 }
