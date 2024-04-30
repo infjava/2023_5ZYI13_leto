@@ -30,9 +30,9 @@ public class Databaza implements Iterable<Osoba> {
     }
 
     public void vygenerujOsoby() {
-        this.osoby.add(new Osoba("Janko", "aaaa", 2));
-        this.osoby.add(new Osoba("Janko", "aaaa", 3));
-        this.osoby.add(new Osoba("Janko", "aaaa", 4));
+        this.osoby.add(new Osoba("Janko", "aaaa", 2, "Trantaria"));
+        this.osoby.add(new Osoba("Janko", "aaaa", 3, "Transylvania"));
+        this.osoby.add(new Osoba("Janko", "aaaa", 4, "Hawai"));
     }
 
     public void ulozDoSuboru(String cesta) {

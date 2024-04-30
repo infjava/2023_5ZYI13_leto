@@ -9,14 +9,16 @@ public class Osoba implements Serializable {
     private String meno;
     private String priezvisko;
     private int vek;
+    private String miestoNarodenia;
 
     public Osoba() {
     }
 
-    public Osoba(String meno, String priezvisko, int vek) {
+    public Osoba(String meno, String priezvisko, int vek, String miestoNarodenia) {
         this.meno = meno;
         this.priezvisko = priezvisko;
         this.vek = vek;
+        this.miestoNarodenia = miestoNarodenia;
     }
 
     public Osoba setMeno(String meno) {
@@ -44,9 +46,17 @@ public class Osoba implements Serializable {
         return this;
     }
 
+    public String getMiestoNarodenia() {
+        return this.miestoNarodenia;
+    }
+
+    public void setMiestoNarodenia(String miestoNarodenia) {
+        this.miestoNarodenia = miestoNarodenia;
+    }
+
     @Override
     public String toString() {
-        return this.priezvisko + " " + this.meno + " [" + this.vek + "]";
+        return this.priezvisko + " " + this.meno + " [" + this.vek + "] + narodeny(a): " + this.miestoNarodenia;
     }
 
     public void ulozDoSuboru(DataOutputStream subor)

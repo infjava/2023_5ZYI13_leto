@@ -12,6 +12,7 @@ public class OsobaEditOkienko {
     private JButton CANCEL;
     private JButton SAVEButton;
     private JPanel MainPanel;
+    private JTextField textFieldMiestoNarodenia;
     private Osoba osoba;
 
     public Boolean getUlozit() {
@@ -29,6 +30,7 @@ public class OsobaEditOkienko {
         this.textFieldMeno.setText(this.osoba.getMeno());
         this.textFieldPriez.setText(this.osoba.getPriezvisko());
         this.textFieldVek.setText(String.valueOf(this.osoba.getVek()));
+        this.textFieldMiestoNarodenia.setText(this.osoba.getMiestoNarodenia());
 
         this.CANCEL.addActionListener( e -> {
             d.setVisible(false);
@@ -40,6 +42,7 @@ public class OsobaEditOkienko {
             this.osoba.setMeno(this.textFieldMeno.getText());
             this.osoba.setPriezvisko(this.textFieldPriez.getText());
             this.osoba.setVek(Integer.parseInt(this.textFieldVek.getText()));
+            this.osoba.setMiestoNarodenia(this.textFieldMiestoNarodenia.getText());
             this.ulozit = true;
             d.setVisible(false);
             d.dispose();
