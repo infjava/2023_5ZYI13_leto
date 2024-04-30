@@ -4,10 +4,12 @@ import data.Databaza;
 import data.Osoba;
 
 import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 
 public class OsobyOkienko {
     private final DefaultListModel<Osoba> model;
@@ -72,7 +74,47 @@ public class OsobyOkienko {
             }
         });
 
+        this.UlozitBtn.addActionListener(e -> this.ulozDoSuboru());
+        this.NacitatBtn.addActionListener(e -> this.nacitajZoSuboru());
 
+    }
+
+    private void ulozDoSuboru() {
+        var vyberSuboru = new JFileChooser();
+
+        this.nastavFiltre(vyberSuboru);
+
+        var vysledok = vyberSuboru.showSaveDialog(this.okno);
+
+        if (vysledok == JFileChooser.APPROVE_OPTION) {
+            var vybratySubor = vyberSuboru.getSelectedFile();
+            var vybrataCesta = vybratySubor.getAbsolutePath();
+            if (!vybratySubor.getName().contains(".")) {
+                vybrataCesta += ".osoba";
+            }
+            System.out.println(vybrataCesta);
+        }
+    }
+
+    private void nacitajZoSuboru() {
+        var vyberSuboru = new JFileChooser();
+
+        this.nastavFiltre(vyberSuboru);
+
+        do {
+            int vysledok = vyberSuboru.showOpenDialog(this.okno);
+            if (vysledok != JFileChooser.APPROVE_OPTION) {
+                return;
+            }
+        } while (vyberSuboru.getSelectedFile() == null || !vyberSuboru.getSelectedFile().exists());
+
+        System.out.println(vyberSuboru.getSelectedFile().getAbsolutePath());
+    }
+
+    private void nastavFiltre(JFileChooser vyberSuboru) {
+        var filter = new FileNameExtensionFilter("Zoznam osôb", "osoba");
+        vyberSuboru.addChoosableFileFilter(filter);
+        vyberSuboru.setFileFilter(filter);
     }
 
     public void nacitajDataZDb() {
