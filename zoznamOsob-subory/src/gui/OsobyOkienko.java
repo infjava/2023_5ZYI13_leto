@@ -25,6 +25,7 @@ public class OsobyOkienko {
 
 
         this.okno = new JFrame("OSOBEEE");
+        this.okno.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.okno.setContentPane(this.panel1);
         this.okno.pack();
         this.okno.setVisible(true);
