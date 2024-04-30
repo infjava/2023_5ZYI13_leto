@@ -109,6 +109,7 @@ public class OsobyOkienko {
         } while (vyberSuboru.getSelectedFile() == null || !vyberSuboru.getSelectedFile().exists());
 
         this.db.nacitajZoSuboru(vyberSuboru.getSelectedFile().getAbsolutePath());
+        this.nacitajDataZDb();
     }
 
     private void nastavFiltre(JFileChooser vyberSuboru) {
@@ -118,6 +119,7 @@ public class OsobyOkienko {
     }
 
     public void nacitajDataZDb() {
+        this.model.clear();
         for (Osoba o : this.db) {
             this.model.addElement(o);
         }

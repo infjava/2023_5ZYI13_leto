@@ -41,5 +41,12 @@ public class Databaza implements Iterable<Osoba> {
     }
 
     public void nacitajZoSuboru(String cesta) {
+        try (var subor = new ObjectInputStream(new FileInputStream(new File(cesta)))) {
+            this.osoby = (ArrayList<Osoba>)subor.readObject();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
